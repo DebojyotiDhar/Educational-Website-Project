@@ -25,4 +25,4 @@ This website includes the following functionalities:
 
 
 # SUBSCRIBE [Assam Coding & Vlogging](https://www.youtube.com/@AssamCodingVlogging) for more contents like this
-![Logo](Images/logo.png)
+![Logo](Logo.png)
