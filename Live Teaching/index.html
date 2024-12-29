@@ -9,6 +9,7 @@
     <!-- Font awesome CDN -->
     <script src="https://kit.fontawesome.com/8585c17760.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/overdiv.css">
 
 </head>
 <body>
@@ -33,8 +34,7 @@
                         <span id="pen-width-value" style="display: none;">3</span>
                     </div>
                     <div class="dropdown-items">
-                        <button class="color-swatch selected-color" style="background: #000000;"
-                            data-color="#000000"></button>
+                        <button class="color-swatch selected-color" style="background: #000000;" data-color="#000000"></button>
                         <button class="color-swatch" style="background: #FF0000;" data-color="#FF0000"></button>
                         <button class="color-swatch" style="background: #00FF00;" data-color="#00FF00"></button>
                         <button class="color-swatch" style="background: #0000FF;" data-color="#0000FF"></button>
@@ -44,16 +44,20 @@
                     </div>
 
                     <div class="dropdown-items-btn">
-                        <button class="other-tools"><i class="fa-solid fa-pencil"></i> Pen</button>
-                        <button class="other-tools"><i class="fa-solid fa-highlighter"></i> Highlighter</button>
-                        <button class="other-tools"><i class="fa-solid fa-eraser"></i> Eraser</button>
-                        <button class="other-tools"><i class="fa-solid fa-circle"></i> Pointer</button>
-                        <button class="other-tools"><i class="fa-solid fa-trash"></i> Erase All</button>
+                        <button class="other-tools" id="pen"><i class="fa-solid fa-pencil"></i> Pen</button>
+                        <button class="other-tools" id="highlighter"><i class="fa-solid fa-highlighter"></i> Highlighter</button>
+                        <button class="other-tools" id="eraser"><i class="fa-solid fa-eraser"></i> Eraser</button>
+                        <button class="other-tools" id="pointer"><i class="fa-solid fa-circle"></i> Pointer</button>
+                        <button class="other-tools" id="trash"><i class="fa-solid fa-trash"></i> Erase All</button>
                     </div>
                 </div>
 
                 <button class="tool-btn undo" id="undo" title="Undo">
                     <span><img src="./assets/images/undo.png"></span>
+                </button>
+
+                <button class="tool-btn redo" id="redo" title="Redo">
+                    <span style="transform: scaleX(-1);"><img src="./assets/images/undo.png"></span>
                 </button>
 
                 <button class="tool-btn screen_share" id="screen_share" title="Screen Share">
@@ -69,7 +73,7 @@
                     <img src="./assets/images/camera-off.png" class="camera-off">
                 </button>
 
-                <button class="dual-tool-btn" id="mic-toggle">
+                <button class="dual-tool-btn" id="mic-toggle" onclick="toggleMic()">
                     <img src="./assets/images/mute.png" class="mic-on" title="Mute">
                     <img src="./assets/images/unmute.png" class="mic-off" title="Unmute">
                 </button>
@@ -112,6 +116,20 @@
         </div>
     </div>
 
+    <div class="overdiv">
+        <div class="popup alert">
+            <img src="./assets/images/alert.gif" alt="Alert">
+            <p>Do you really want to erase all ?</p>
+            <div class="overBtns">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+    </div>
+
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/mic.js"></script>
+    <script src="./assets/js/cameraControl.js"></script>
+
 </body>
 </html>
